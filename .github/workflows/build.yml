@@ -17,5 +17,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: app_root
-          path: *.AppImage
+          name: appimage
+          path: ./SnapPy-x86_64.AppImage
