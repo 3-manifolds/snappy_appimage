@@ -1,0 +1,21 @@
+name: Build app root
+
+on: [push, pull_request]
+
+jobs:
+  build_app_root:
+    name: Build app root
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build AppImage
+        run: |
+          make
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app_root
+          path: *.AppImage

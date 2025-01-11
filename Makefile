@@ -5,10 +5,10 @@ all: Setup SnapPyApp
 .PHONY: Setup SnapPyApp
 
 Setup:
-	echo fetch app_root tarball
+	bash bin/fetch_app_root.sh
 	bash bin/install_snappy.sh
 	rm -rf app_root
-	tar xvfz app_root_final.tgz
+	tar xfz app_root_final.tgz
 
 SnapPyApp:
 	cp app_files/* app_root
