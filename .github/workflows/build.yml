@@ -1,10 +1,10 @@
-name: Build app root
+name: Build SnapPy AppImage
 
 on: [push, pull_request]
 
 jobs:
-  build_app_root:
-    name: Build app root
+  build_appimage:
+    name: Build SnapPy AppImage
     runs-on: ubuntu-latest
 
     steps:

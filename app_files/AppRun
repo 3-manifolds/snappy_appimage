@@ -10,8 +10,8 @@ fi
 # Resolve the calling command (preserving symbolic links).
 export APPIMAGE_COMMAND=$(command -v -- "$ARGV0")
 
-# Call python to run snappy.app
 if [ $# == 1 ] && [ $1 == --install ]; then
+    # Create desktop files
     if [ -z "${APPIMAGE}" ]; then
 	echo "The --install option requires a packed AppImage."
 	exit 1
@@ -23,9 +23,12 @@ if [ $# == 1 ] && [ $1 == --install ]; then
     mkdir -p "${XDG_DATA_HOME}/icons"
     sed -e "s|Exec=.*|Exec=${APPIMAGE}|" "${APPDIR}/snappy.desktop" >"${XDG_DATA_HOME}/applications/snappy.desktop"
     cp "${APPDIR}/SnapPy.png" "${XDG_DATA_HOME}/icons"
-else
-    "${APPDIR}/bin/python3.13" -m snappy.app
+    echo "SnapPy has been registered with your desktop system."
 fi
+
+# Call python to run snappy.app
+"${APPDIR}/bin/python3.13" -m snappy.app
+
 
 
 
