@@ -12,7 +12,7 @@ docker exec -w /tmp builder app_root/bin/python3 -m pip install \
        setuptools wheel cython sphinx sphinx-rtd-theme pyx
 
 # Install PLink
-docker exec -w /tmp builder git clone https://github.com/3-manifolds/Plink
+docker exec -w /tmp builder git clone https://github.com/3-manifolds/PLink
 docker exec -w /tmp/PLink builder /tmp/app_root/bin/python3 -m pip install .
 
 # Install Spherogram
