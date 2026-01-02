@@ -1,5 +1,5 @@
-PYTHON_VERSION=3.13
-RELEASE_TAG=v1.0
+PYTHON_VERSION=3.14
+RELEASE_TAG=v1.1
 ARCHIVE=app_root-${PYTHON_VERSION}.tgz
 HASH_FILE=app_root-${PYTHON_VERSION}.sha256
 DOWNLOAD=https://github.com/3-manifolds/py_appimage/releases/download

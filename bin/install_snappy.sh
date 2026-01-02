@@ -1,11 +1,11 @@
 #!/usr/bin/bash
-PYTHON_VERSION=3.13
+PYTHON_VERSION=3.14
 
 docker run -d -t --name builder quay.io/pypa/manylinux2014_x86_64:latest
 docker cp app_root-${PYTHON_VERSION}.tgz builder:/tmp
 
 # Unpack app root
-docker exec -w /tmp builder tar xfz app_root-3.13.tgz
+docker exec -w /tmp builder tar xfz app_root-3.14.tgz
 
 # Install build dependencies
 docker exec -w /tmp builder app_root/bin/python3 -m pip install \

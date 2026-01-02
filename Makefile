@@ -1,4 +1,4 @@
-SNAPPY_VERSION=3.2
+SNAPPY_VERSION=3.3
 
 all: Setup SnapPyApp
 
