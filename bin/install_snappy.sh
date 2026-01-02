@@ -12,6 +12,10 @@ docker exec -w /tmp builder tar xfz app_root-3.14.tgz
 docker exec -w /tmp builder app_root/bin/python3 -m pip install \
        setuptools wheel cython sphinx sphinx-rtd-theme pyx
 
+# Install knot_floer_homology
+docker exec -w /tmp builder git clone https://github.com/3-manifolds/knot_floer_homology
+docker exec -w /tmp/knot_floer_homology builder /tmp/app_root/bin/python3 -m pip install .
+
 # Install PLink
 docker exec -w /tmp builder git clone https://github.com/3-manifolds/PLink
 docker exec -w /tmp/PLink builder /tmp/app_root/bin/python3 -m pip install .
