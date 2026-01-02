@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 PYTHON_VERSION=3.14
+set -e
 
 docker run -d -t --name builder quay.io/pypa/manylinux2014_x86_64:latest
 docker cp app_root-${PYTHON_VERSION}.tgz builder:/tmp
